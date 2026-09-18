@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="駐車場 写真プレースホルダー">
+  <defs>
+    <pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#232323"/>
+      <rect width="7" height="14" fill="#2b2b2b"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p)"/>
+  <path d="M600 240 L699 400 L501 400 Z" fill="#D71920"/>
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="488" fill="#FFFFFF" font-size="40" letter-spacing="6.4" font-weight="700">PHOTO PLACEHOLDER</text>
+    <text x="600" y="552" fill="#BDBDBD" font-size="32">駐車場</text>
+    <text x="600" y="608" fill="#8F8F8F" font-size="27">店舗提供写真に差し替え</text>
+  </g>
+  <rect x="1.5" y="1.5" width="1197" height="797" fill="none" stroke="#454545" stroke-width="3"/>
+</svg>

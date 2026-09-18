@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100" role="img" aria-label="麺・スープのアップ 写真プレースホルダー">
+  <defs>
+    <pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#232323"/>
+      <rect width="7" height="14" fill="#2b2b2b"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="1100" fill="url(#p)"/>
+  <path d="M450 370 L562 550 L338 550 Z" fill="#D71920"/>
+  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="450" y="649" fill="#FFFFFF" font-size="45" letter-spacing="7.2" font-weight="700">PHOTO PLACEHOLDER</text>
+    <text x="450" y="721" fill="#BDBDBD" font-size="36">麺・スープのアップ</text>
+    <text x="450" y="784" fill="#8F8F8F" font-size="31">店舗提供写真に差し替え</text>
+  </g>
+  <rect x="1.5" y="1.5" width="897" height="1097" fill="none" stroke="#454545" stroke-width="3"/>
+</svg>
