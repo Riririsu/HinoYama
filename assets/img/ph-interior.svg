@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="店内 写真プレースホルダー">
   <defs>
-    <pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="14" height="14" fill="#232323"/>
-      <rect width="7" height="14" fill="#2b2b2b"/>
+    <pattern id="p" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#2A211C"/>
+      <rect width="8" height="16" fill="#31261F"/>
     </pattern>
   </defs>
   <rect width="1200" height="800" fill="url(#p)"/>
-  <path d="M600 240 L699 400 L501 400 Z" fill="#D71920"/>
-  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
-    <text x="600" y="488" fill="#FFFFFF" font-size="40" letter-spacing="6.4" font-weight="700">PHOTO PLACEHOLDER</text>
-    <text x="600" y="552" fill="#BDBDBD" font-size="32">店内</text>
-    <text x="600" y="608" fill="#8F8F8F" font-size="27">店舗提供写真に差し替え</text>
+  <path d="M600 264 L690 400 L510 400 Z" fill="#C8342E"/>
+  <g font-family="'Hiragino Mincho ProN', serif" text-anchor="middle">
+    <text x="600" y="496" fill="#F3E9DA" font-size="38" letter-spacing="9.6">店内</text>
+    <text x="600" y="552" fill="#A2907C" font-size="26" letter-spacing="3.2">店舗提供写真に差し替え</text>
   </g>
-  <rect x="1.5" y="1.5" width="1197" height="797" fill="none" stroke="#454545" stroke-width="3"/>
 </svg>

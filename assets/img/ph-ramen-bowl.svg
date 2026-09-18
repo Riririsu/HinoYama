@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="一杯の全体写真 写真プレースホルダー">
   <defs>
-    <pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="14" height="14" fill="#232323"/>
-      <rect width="7" height="14" fill="#2b2b2b"/>
+    <pattern id="p" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="16" height="16" fill="#2A211C"/>
+      <rect width="8" height="16" fill="#31261F"/>
     </pattern>
   </defs>
   <rect width="1200" height="900" fill="url(#p)"/>
-  <path d="M600 270 L712 450 L488 450 Z" fill="#D71920"/>
-  <g font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
-    <text x="600" y="549" fill="#FFFFFF" font-size="45" letter-spacing="7.2" font-weight="700">PHOTO PLACEHOLDER</text>
-    <text x="600" y="621" fill="#BDBDBD" font-size="36">一杯の全体写真</text>
-    <text x="600" y="684" fill="#8F8F8F" font-size="31">店舗提供写真に差し替え</text>
+  <path d="M600 297 L701 450 L499 450 Z" fill="#C8342E"/>
+  <g font-family="'Hiragino Mincho ProN', serif" text-anchor="middle">
+    <text x="600" y="558" fill="#F3E9DA" font-size="42" letter-spacing="10.8">一杯の全体写真</text>
+    <text x="600" y="621" fill="#A2907C" font-size="30" letter-spacing="3.6">店舗提供写真に差し替え</text>
   </g>
-  <rect x="1.5" y="1.5" width="1197" height="897" fill="none" stroke="#454545" stroke-width="3"/>
 </svg>
