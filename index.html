@@ -77,11 +77,12 @@
     </a>
 
     <nav class="nav" aria-label="サイト内メニュー">
-      <a href="#ramen">火の山の一杯</a>
+      <a href="#ramen">こだわり</a>
       <a href="#menu">メニュー</a>
       <a href="#first-visit">はじめての方へ</a>
       <a href="#info">店舗情報</a>
       <a href="#access">アクセス</a>
+      <a href="#news">お知らせ</a>
     </nav>
 
     <div class="head-actions">
@@ -136,7 +137,7 @@
     <div class="ramen__grid">
       <div>
         <div class="sec-head" data-reveal>
-          <p class="sec-head__label">The Ramen</p>
+          <p class="sec-head__label">Concept</p>
           <h2 class="sec-head__title" id="ramen-h">火の山の一杯</h2>
         </div>
         <p class="formula" data-reveal data-reveal-delay="1"><span>豚骨</span><span>×</span><span>魚介</span></p>
@@ -164,45 +165,41 @@
      ============================================================= -->
 <section class="menu dark" id="menu" aria-labelledby="menu-h">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="sec-head__label">Menu</p>
-      <h2 class="sec-head__title" id="menu-h">お品書き</h2>
-      <p class="sec-head__lead">現時点で公開情報から確認できていない価格は、架空の金額を載せず「要確認」と表記しています。</p>
+    <div class="sec-head sec-head--row" data-reveal>
+      <div>
+        <p class="sec-head__label">Menu</p>
+        <h2 class="sec-head__title" id="menu-h">お品書き</h2>
+        <p class="sec-head__lead">現時点で公開情報から確認できていない価格は、架空の金額を載せず「要確認」と表記しています。</p>
+      </div>
+      <a class="link-arrow" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">最新のメニューを見る<span class="sr-only">（公式Instagram・新しいタブで開きます）</span></a>
     </div>
 
-    <div class="menu__group" data-reveal>
-      <div class="menu__group-head">
-        <span class="menu__group-jp">ラーメン</span>
-        <span class="menu__group-en">Ramen</span>
-      </div>
-      <div class="menu__item">
-        <span class="menu__name">ラーメン</span>
-        <span class="tbc">価格 要確認</span>
-      </div>
-      <div class="menu__item">
-        <span class="menu__name">ラーメン（大）</span>
-        <span class="tbc">価格 要確認</span>
-      </div>
-      <div class="menu__item">
-        <span class="menu__name">ラーメン（特大）</span>
-        <span class="tbc">価格 要確認</span>
-      </div>
-    </div>
-
-    <div class="menu__group" data-reveal>
-      <div class="menu__group-head">
-        <span class="menu__group-jp">トッピング</span>
-        <span class="menu__group-en">Topping</span>
-      </div>
-      <div class="menu__item">
-        <span class="menu__name">トッピング</span>
-        <span class="tbc">内容・価格 要確認</span>
-      </div>
+    <div class="menu__grid">
+      <article class="menu-card" data-reveal>
+        <img class="brushed" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメンの写真（差し替え予定のプレースホルダー）">
+        <h3 class="menu-card__name">ラーメン</h3>
+        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+      </article>
+      <article class="menu-card" data-reveal data-reveal-delay="1">
+        <img class="brushed brushed--2" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメン（大）の写真（差し替え予定のプレースホルダー）">
+        <h3 class="menu-card__name">ラーメン（大）</h3>
+        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+      </article>
+      <article class="menu-card" data-reveal data-reveal-delay="2">
+        <img class="brushed" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメン（特大）の写真（差し替え予定のプレースホルダー）">
+        <h3 class="menu-card__name">ラーメン（特大）</h3>
+        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+      </article>
+      <article class="menu-card" data-reveal data-reveal-delay="3">
+        <img class="brushed brushed--2" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="トッピングの写真（差し替え予定のプレースホルダー）">
+        <h3 class="menu-card__name">トッピング</h3>
+        <p class="menu-card__price"><span class="tbc">内容・価格 要確認</span></p>
+      </article>
     </div>
 
     <p class="menu__note" data-reveal>
-      ※メニュー構成・価格は店舗確認後に正式情報へ差し替えます。<br>
-      ※最新の限定メニュー・提供状況は <a href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">公式Instagram</a> をご確認ください。
+      ※掲載しているのは、公開情報から確認できたメニューのみです。構成・価格は店舗確認後に正式情報へ差し替えます。<br>
+      ※限定メニュー・当日の提供状況は <a href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">公式Instagram</a> をご確認ください。
     </p>
   </div>
 </section>
@@ -268,6 +265,7 @@
       <h2 class="sec-head__title" id="info-h">店舗情報</h2>
     </div>
 
+    <div class="info__split">
     <dl class="info__table" data-reveal>
       <div class="info__row">
         <dt class="info__dt">店名<small>Shop</small></dt>
@@ -310,6 +308,17 @@
         </dd>
       </div>
     </dl>
+
+    <div class="info__map" data-reveal data-reveal-delay="1">
+      <div class="map">
+        <iframe
+          title="鹿児島ラーメン 火の山 周辺地図（Googleマップ）"
+          src="https://www.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64&amp;hl=ja&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p class="info__sub">※地図が表示されない場合は、下の「Googleマップで経路を見る」からご確認ください。</p>
+    </div>
+    </div>
   </div>
 </section>
 
@@ -362,20 +371,54 @@
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
             Googleマップで経路を見る
           </a>
-        </div>
-
-        <div class="map" data-reveal data-reveal-delay="2">
-          <iframe
-            title="鹿児島ラーメン 火の山 周辺地図（Googleマップ）"
-            src="https://www.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64&amp;hl=ja&amp;z=17&amp;output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="link-arrow" href="#info">店舗情報と地図を見る</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===== 07 INSTAGRAM =========================================== -->
+<!-- ===== 07 お知らせ ============================================
+     お知らせ本文は捏造しない。確定情報（2026.9.15 オープン）のみ掲載し、
+     以降は店舗が更新する前提でレイアウト見本を置いている。
+     ============================================================= -->
+<section class="news paper" id="news" aria-labelledby="news-h">
+  <div class="wrap">
+    <div class="sec-head sec-head--row" data-reveal>
+      <div>
+        <p class="sec-head__label">News</p>
+        <h2 class="sec-head__title" id="news-h">お知らせ</h2>
+        <p class="sec-head__lead">営業時間の変更や臨時休業など、店舗からのお知らせを掲載する欄です。</p>
+      </div>
+      <a class="link-arrow" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">Instagramの最新投稿へ<span class="sr-only">（新しいタブで開きます）</span></a>
+    </div>
+
+    <ol class="news__list" data-reveal>
+      <li class="news__item">
+        <time datetime="2026-09-15">2026.09.15</time>
+        <span class="news__title">鹿児島ラーメン 火の山 オープン</span>
+      </li>
+      <li class="news__item news__item--sample">
+        <time>0000.00.00</time>
+        <span class="news__title">臨時休業のお知らせ</span>
+        <span class="tbc">掲載例</span>
+      </li>
+      <li class="news__item news__item--sample">
+        <time>0000.00.00</time>
+        <span class="news__title">営業時間変更のお知らせ</span>
+        <span class="tbc">掲載例</span>
+      </li>
+    </ol>
+
+    <p class="info__sub news__note" data-reveal>
+      ※「掲載例」はレイアウト確認用の表示です。実際のお知らせは掲載していません。<br>
+      ※運用方法（店舗側で更新するか、RIKKUN WEB STUDIOが代行するか）はご相談のうえ決定します。
+    </p>
+  </div>
+</section>
+
+<!-- ===== 08 INSTAGRAM =========================================== -->
 <section class="ig paper paper--alt" id="instagram" aria-labelledby="ig-h">
   <div class="wrap">
     <div class="ig__split">
@@ -411,7 +454,7 @@
   </div>
 </section>
 
-<!-- ===== 08 最終CTA ============================================= -->
+<!-- ===== 09 最終CTA ============================================= -->
 <section class="final dark" aria-labelledby="final-h">
   <img class="watermark" src="assets/img/mountain.svg" width="1200" height="420" alt="" aria-hidden="true">
   <div class="wrap">

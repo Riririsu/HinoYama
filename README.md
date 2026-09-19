@@ -19,11 +19,12 @@ Instagram / Google検索 / Googleマップで火の山を知った人が、
 ## 構成
 
 ```
-index.html                  1ページ完結（Hero → 一杯 → メニュー → はじめて → 店舗情報 → アクセス → Instagram → 最終CTA）
+index.html                  1ページ完結（Hero → こだわり → お品書き → はじめて火の山へ → 店舗情報 → アクセス → お知らせ → Instagram → 最終CTA）
 assets/css/style.css        スタイル（白・黒・赤／山のロゴを根拠にしたデザイン）
 assets/js/main.js           スクロール表示・ステップの赤いライン・スマホ固定CTA
 assets/img/*.svg            仮素材（写真プレースホルダー・ロゴ仮マーク）
 docs/CONTENT-STATUS.md      掲載情報の確認状況／差し替え手順
+docs/wireframe/             受領したワイヤーフレーム原本と、実装との対応表（NOTES.md）
 ```
 
 ビルド不要の静的サイトです。ローカル確認：

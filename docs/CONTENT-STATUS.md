@@ -18,8 +18,10 @@
 
 | 項目 | 現在の表示 | 差し替え場所（index.html） |
 | --- | --- | --- |
-| ラーメン価格（並・大・特大） | 価格 要確認 | `#menu` の `.menu__item` 内 `.tbc` |
-| トッピング内容・価格 | 内容・価格 要確認 | `#menu` の Topping グループ |
+| ラーメン価格（並・大・特大） | 価格 要確認 | `#menu` の `.menu-card__price` 内 `.tbc` |
+| トッピング内容・価格 | 内容・価格 要確認 | `#menu` の4枚目のカード |
+| メニュー写真（4枚） | 仮素材 | `assets/img/ph-dish.svg`（カードごとに差し替え） |
+| お知らせ本文 | 「掲載例」2件のみ | `#news` の `.news__item--sample`（実データに差し替え、または削除） |
 | 営業時間 | 営業時間 要確認 | `#info` Open 行 |
 | 定休日 | 定休日 要確認 | `#info` Closed 行 |
 | 電話番号 | 電話番号 要確認 | `#info` Tel 行 |
@@ -28,6 +30,20 @@
 | 目印・公共交通機関 | 要確認 | `#access` の `.access__point` |
 | 写真（ラーメン／外観／駐車場／店内／Instagram投稿） | 仮素材 | `assets/img/ph-*.svg` |
 | ロゴ | 仮マーク | `assets/img/logo-hinoyama.svg` |
+
+### メニュー構成についての注意
+
+ご提供いただいたワイヤーフレームには「チャーシューメン」「餃子」が含まれていましたが、
+公開情報で提供を確認できないため **掲載していません**。
+確認が取れ次第、`#menu` にカードを追加するだけで対応できます。
+
+```html
+<article class="menu-card">
+  <img class="brushed" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="">
+  <h3 class="menu-card__name">メニュー名</h3>
+  <p class="menu-card__price">￥000</p>
+</article>
+```
 
 ### 注文方法についての注意
 
@@ -42,12 +58,10 @@
 
 ```html
 <!-- Before -->
-<span class="menu__name">ラーメン</span>
-<span class="tbc">価格 要確認</span>
+<p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
 
 <!-- After -->
-<span class="menu__name">ラーメン</span>
-<span class="menu__price">￥000</span>
+<p class="menu-card__price">￥000</p>
 ```
 
 `.tbc` を価格テキストへ置き換えるだけで、レイアウトはそのまま使えます。
