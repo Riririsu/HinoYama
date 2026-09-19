@@ -12,16 +12,17 @@ Instagram / Google検索 / Googleマップで火の山を知った人が、
 まで迷わず進めるようにするための「Web上の店舗案内所」です。
 サイト自体が目的ではなく、**来店（Googleマップへの送客）** がゴールです。
 
-- PRIMARY CTA … 「Googleマップで経路を見る」（Hero / アクセス / 最終CTA / スマホ固定バー）
-- SECONDARY CTA … 「メニューを見る」「Instagramで最新情報を見る」
+- PRIMARY CTA … 「Googleマップで経路を見る」（アクセス）＋ヘッダー常設の「Googleマップで見る」
+- SECONDARY CTA … 「メニューを見る」「メニュー一覧を見る」「詳しく見る」「Instagramを見る」
 - 予約機能・問い合わせフォームは意図的に実装していません。
 
 ## 構成
 
 ```
-index.html                  1ページ完結（Hero → こだわり → お品書き → はじめて火の山へ → 店舗情報 → アクセス → お知らせ → Instagram → 最終CTA）
+index.html                  1ページ完結（Hero → こだわり → メニュー → 店舗情報 → アクセス → お知らせ → Instagram）
+                            ※セクション構成・導線はご提供のワイヤーフレーム基準（docs/wireframe/NOTES.md）
 assets/css/style.css        スタイル（白・黒・赤／山のロゴを根拠にしたデザイン）
-assets/js/main.js           スクロール表示・ステップの赤いライン・スマホ固定CTA
+assets/js/main.js           スクロール表示（fade / slide / small scale）
 assets/img/*.svg            仮素材（写真プレースホルダー・ロゴ仮マーク）
 docs/CONTENT-STATUS.md      掲載情報の確認状況／差し替え手順
 docs/wireframe/             受領したワイヤーフレーム原本と、実装との対応表（NOTES.md）

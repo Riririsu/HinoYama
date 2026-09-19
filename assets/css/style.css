@@ -40,7 +40,6 @@
   --maxw: 1280px;
 
   --ease: cubic-bezier(.22, .61, .36, 1);
-  --sticky-h: 0px;
 
   /* 和紙の繊維感（ごく薄いノイズ） */
   --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
@@ -62,7 +61,6 @@ body {
   line-height: 2;
   letter-spacing: .04em;
   overflow-x: hidden;
-  padding-bottom: var(--sticky-h);
 }
 
 h1, h2, h3, h4, p, figure, dl, dd, ul, ol, address { margin: 0; }
@@ -327,7 +325,7 @@ address { font-style: normal; }
 }
 
 /* --------------------------------------------------------------------------
-   06. THE RAMEN（火の山の一杯）
+   06. CONCEPT（こだわりの味）
    -------------------------------------------------------------------------- */
 .ramen { padding-block: var(--sec-y); }
 .ramen__grid { display: grid; gap: clamp(30px, 5vw, 72px); align-items: center; }
@@ -343,6 +341,7 @@ address { font-style: normal; }
   margin-top: 30px; max-width: 32em;
   font-family: var(--font-min); font-size: clamp(15px, 1.8vw, 17px); line-height: 2.2;
 }
+.ramen__link { margin-top: 30px; }
 .ramen__note { margin-top: 20px; font-size: 13px; line-height: 2; color: var(--text-mute-on-dark); }
 .ramen__media { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); }
 .ramen__media img { width: 100%; object-fit: cover; }
@@ -373,7 +372,7 @@ address { font-style: normal; }
 .menu__note a { color: var(--red-ink); text-underline-offset: 4px; }
 
 /* --------------------------------------------------------------------------
-   07b. NEWS（お知らせ）
+   08. NEWS（お知らせ）
    -------------------------------------------------------------------------- */
 .news { padding-block: var(--sec-y); }
 .news .sec-head--row, .news__list, .news__note { max-width: 960px; }
@@ -399,34 +398,7 @@ address { font-style: normal; }
 .dark .info__sub { color: var(--text-mute-on-dark); }
 
 /* --------------------------------------------------------------------------
-   08. FIRST VISIT（はじめて火の山へ）
-   -------------------------------------------------------------------------- */
-.first { padding-block: var(--sec-y); }
-.first__grid { display: grid; gap: clamp(30px, 4vw, 64px); }
-@media (min-width: 900px) {
-  .first__grid { grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); align-items: start; }
-  .first__grid .sec-head { margin-bottom: 0; position: sticky; top: 104px; }
-}
-.steps { position: relative; }
-.steps::before {
-  content: ""; position: absolute; left: 17px; top: 16px; bottom: 16px; width: 1px; background: var(--line);
-}
-.steps__fill { position: absolute; left: 17px; top: 16px; width: 1px; background: var(--red); height: 0; transition: height 1.2s var(--ease); }
-.step { position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 20px; padding: 16px 0; }
-.step__no {
-  position: relative; z-index: 1; width: 36px; height: 36px; display: grid; place-items: center;
-  border-radius: 50%; background: var(--washi); border: 1px solid var(--line-dark);
-  font-family: var(--font-min); font-size: 13.5px; letter-spacing: .04em; color: var(--text);
-}
-.paper--alt .step__no { background: var(--washi-2); }
-.step:last-child .step__no { background: var(--red); border-color: var(--red); color: #fff; }
-.step__title { font-family: var(--font-min); font-size: clamp(16.5px, 2.2vw, 19px); font-weight: 700; letter-spacing: .08em; }
-.step__text { font-size: 14px; line-height: 2; color: var(--text-mute); margin-top: 6px; }
-.step__text a { color: var(--red-ink); text-underline-offset: 4px; }
-@media (min-width: 900px) { .step { grid-template-columns: 40px 1fr; gap: 24px; padding: 20px 0; } }
-
-/* --------------------------------------------------------------------------
-   09. 店舗情報
+   09. SHOP INFORMATION（店舗情報）
    -------------------------------------------------------------------------- */
 .info { padding-block: var(--sec-y); }
 .info__split { display: grid; gap: clamp(28px, 4vw, 52px); align-items: start; }
@@ -486,7 +458,7 @@ address { font-style: normal; }
    -------------------------------------------------------------------------- */
 .ig { padding-block: var(--sec-y); }
 .ig__split { display: grid; gap: clamp(26px, 4vw, 56px); }
-@media (min-width: 900px) { .ig__split { grid-template-columns: .82fr 1.18fr; align-items: center; } }
+@media (min-width: 900px) { .ig__split { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; } }
 .ig__body { font-family: var(--font-min); font-size: 15.5px; line-height: 2.2; }
 .ig__roles { margin-top: 26px; display: grid; gap: 14px; }
 .ig__role { display: grid; grid-template-columns: 104px 1fr; gap: 16px; align-items: baseline; font-size: 14px; }
@@ -497,18 +469,8 @@ address { font-style: normal; }
 .ig__grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 
 /* --------------------------------------------------------------------------
-   12. 最終CTA / フッター
+   12. フッター
    -------------------------------------------------------------------------- */
-.final { position: relative; padding-block: clamp(84px, 13vw, 168px); overflow: hidden; }
-.final .wrap { text-align: center; }
-.final__copy {
-  font-family: var(--font-min); font-weight: 700;
-  font-size: clamp(32px, 7vw, 68px); line-height: 1.5; letter-spacing: .1em;
-}
-.final__copy em { font-style: normal; color: #e0655f; }
-.final__sub { margin: 22px auto 0; max-width: 34em; color: var(--text-mute-on-dark); font-size: 14.5px; }
-.final__cta { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 30px; }
-
 .foot { background: var(--sumi-2); color: var(--text-mute-on-dark); padding-block: 60px 42px; font-size: 13.5px; }
 .foot__top { display: grid; gap: 32px; }
 @media (min-width: 820px) { .foot__top { grid-template-columns: 1.3fr 1fr 1fr; } }
@@ -528,20 +490,7 @@ address { font-style: normal; }
 }
 
 /* --------------------------------------------------------------------------
-   13. スマホの固定CTA
-   -------------------------------------------------------------------------- */
-.sticky-cta {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
-  background: rgba(22, 17, 14, .96); border-top: 1px solid var(--line-dark);
-  padding: 9px var(--pad-x) calc(9px + env(safe-area-inset-bottom));
-  transform: translateY(115%); transition: transform .35s var(--ease);
-}
-.sticky-cta.is-on { transform: translateY(0); }
-.sticky-cta a { width: 100%; min-height: 50px; font-size: 15px; }
-@media (min-width: 900px) { .sticky-cta { display: none; } }
-
-/* --------------------------------------------------------------------------
-   14. MOTION（fade / slide / small scale と赤い罫のみ）
+   13. MOTION（fade / slide / small scale と赤い罫のみ）
    -------------------------------------------------------------------------- */
 .js [data-reveal] { opacity: 0; transform: translateY(20px); }
 [data-reveal].is-in { opacity: 1; transform: none; transition: opacity .9s var(--ease), transform .9s var(--ease); }
@@ -560,5 +509,4 @@ address { font-style: normal; }
   .js .hero__lead::before, .hero__lead::before {
     opacity: 1 !important; transform: none !important; transition: none !important;
   }
-  .steps__fill, .sticky-cta { transition: none; }
 }
