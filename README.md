@@ -38,10 +38,27 @@ RIKKUN WEB STUDIO が **鹿児島ラーメン 火の山** 様へ営業提案す�
 `prefers-reduced-motion: reduce` では上記すべてを停止します。
 JSが無効でも全コンテンツが表示されます。
 
+## 3つのデザイン案
+
+同じ情報・同じ事実性ルールのまま、見せ方だけを変えた3案です。
+
+| 案 | ファイル | コンセプト | 特徴 |
+| --- | --- | --- | --- |
+| **A** | `index.html` | CINEMATIC ― 夜の店内 | キービジュアルをそのまま全画面で。墨黒×琥珀の灯り、湯気、縦書き。写真で食欲を立ち上げる |
+| **B** | `plan-b.html` | EDITORIAL LIGHT ― 昼の雑誌ページ | 白と余白、大きな明朝と朱の一点。メニューは横スクロール。清潔感と読みやすさ |
+| **C** | `plan-c.html` | SPLIT / 縦書き ― 暖簾の奥へ | 左に店名と縦書きナビを固定、右が流れる。藍墨×和紙×朱、品書きは壱弐参肆 |
+
+各案のスタイルとスクリプト：
+`assets/css/style.css` + `assets/js/main.js`（案A）、
+`assets/css/plan-b.css` + `assets/js/plan-b.js`（案B）、
+`assets/css/plan-c.css` + `assets/js/plan-c.js`（案C）。
+写真は3案で共通のものを使用しています。
+
 ## 構成
 
 ```
-index.html                  1ページ（Hero → こだわり → 帯 → メニュー → 店舗情報 → お知らせ → 最後の一押し）
+index.html                  案A（Hero → こだわり → 帯 → メニュー → 店舗情報 → お知らせ → 最後の一押し）
+plan-b.html / plan-c.html   案B・案C
 assets/css/style.css        スタイルとアニメーション
 assets/js/main.js           ローディング／出現／パララックス／ドロワー／カーソル
 assets/img/*.webp           キービジュアルから切り出した写真（合計約 370KB）
