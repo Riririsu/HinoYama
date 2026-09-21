@@ -5,41 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- ==========================================================================
-     鹿児島ラーメン 火の山 ｜ 提案用デモサイト（PROPOSAL DEMO）
+     鹿児島ラーメン 火の山 ｜ 提案用デモサイト
      制作：RIKKUN WEB STUDIO
-
-     セクション構成・情報設計・導線は、ご提供いただいたワイヤーフレーム
-     （docs/wireframe/ に原本を保存）を基準にしている。
-     HERO → CONCEPT → MENU → SHOP INFORMATION → ACCESS → NEWS → INSTAGRAM → FOOTER
-
-     ※本サイトは営業提案用のデモであり、店舗の公式サイトではありません。
-     ※「要確認」と表記した情報は店舗確認後に正式情報へ差し替えます。
-        差し替え箇所の一覧は docs/CONTENT-STATUS.md を参照。
+     いただいたキービジュアル（墨黒＋琥珀の灯り／筆文字／湯気／縦書き）を
+     そのままWebへ展開した構成。※公式サイトではありません。
      ========================================================================== -->
 
 <title>鹿児島ラーメン 火の山｜姶良市加治木町</title>
-<meta name="description" content="姶良市加治木町の鹿児島ラーメン 火の山。豚骨と魚介の旨味を重ねた一杯を提供。営業時間・メニュー・アクセス・駐車場などの店舗情報をご案内します。">
-
-<!-- 提案用デモのため検索インデックスを無効化。実案件化した際にこの1行を削除する。 -->
+<meta name="description" content="姶良市加治木町の鹿児島ラーメン 火の山。豚骨のコクと、やさしい旨み。ここでしか味わえない一杯を。メニュー・店舗情報・アクセスをご案内します。">
 <meta name="robots" content="noindex, nofollow">
-
+<meta name="theme-color" content="#0a0705">
 <meta property="og:type" content="website">
 <meta property="og:title" content="鹿児島ラーメン 火の山｜姶良市加治木町">
-<meta property="og:description" content="姶良市加治木町の鹿児島ラーメン 火の山。豚骨と魚介の旨味を重ねた一杯。営業時間・メニュー・アクセス・駐車場をご案内します。">
+<meta property="og:description" content="豚骨のコクと、やさしい旨み。ここでしか味わえない一杯を。">
+<meta property="og:image" content="assets/img/og.webp">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#16110e">
 
-<!-- JSが有効なときだけスクロール表示を使う（JS無効でも本文が読めるようにするため） -->
 <script>document.documentElement.classList.add('js');</script>
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/kv-main.webp" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700;800&family=Yuji+Syuku&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 
-<!-- 構造化データ：確認済みの情報のみ記載。営業時間・電話番号・価格は未確認のため意図的に含めない。 -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,353 +53,306 @@
 <body>
 <a class="skip-link" href="#main">本文へスキップ</a>
 
-<!-- ===== PROPOSAL DEMO 表記 ===================================== -->
-<div class="demo-bar">
-  <div class="wrap">
-    <span><b>PROPOSAL DEMO</b>／提案用デモサイト・公式サイトではありません</span>
-    <span class="demo-bar__long">鹿児島ラーメン 火の山 様へのご提案用に RIKKUN WEB STUDIO が制作しています。</span>
+<!-- ===== ローディング（暖簾が開く） ============================= -->
+<div class="loader" data-loader aria-hidden="true">
+  <div class="loader__panel loader__panel--l"></div>
+  <div class="loader__panel loader__panel--r"></div>
+  <div class="loader__mark">
+    <span class="loader__name">火の山</span>
+    <span class="loader__line"></span>
+    <span class="loader__sub">KAGOSHIMA RAMEN</span>
   </div>
 </div>
 
+<!-- ===== スクロール進捗 ========================================= -->
+<div class="progress" data-progress aria-hidden="true"><span></span></div>
+
+<!-- ===== カーソルの灯り（デスクトップのみ） ====================== -->
+<div class="cursor-glow" data-cursor aria-hidden="true"></div>
+
 <!-- ===== HEADER ================================================= -->
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="#top">
-      <span class="brand__mark">
-        <span class="brand__name">火の山</span>
-        <span class="brand__sub">鹿児島ラーメン</span>
-      </span>
+<header class="site-head" data-head>
+  <a class="brand" href="#top" aria-label="鹿児島ラーメン 火の山 トップへ">
+    <span class="brand__box">
+      <span class="brand__name">火の山</span>
       <span class="brand__seal" aria-hidden="true">山</span>
-    </a>
+    </span>
+    <span class="brand__sub">鹿児島ラーメン</span>
+  </a>
 
-    <nav class="nav" aria-label="サイト内メニュー">
-      <a href="#top">ホーム</a>
-      <a href="#menu">メニュー</a>
-      <a href="#concept">こだわり</a>
-      <a href="#shop">店舗情報</a>
-      <a href="#news">お知らせ</a>
-    </nav>
+  <nav class="nav" aria-label="サイト内メニュー">
+    <a href="#top" class="is-current">ホーム</a>
+    <a href="#menu">メニュー</a>
+    <a href="#concept">こだわり</a>
+    <a href="#shop">店舗情報</a>
+    <a href="#news">お知らせ</a>
+  </nav>
 
-    <div class="head-actions">
-      <a class="icon-link" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener" aria-label="公式Instagram（新しいタブで開きます）">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a class="btn btn--primary" href="#access">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
-        <span class="btn__label">Googleマップで見る</span>
-      </a>
-    </div>
-  </div>
+  <a class="pill pill--head" href="#shop">
+    <span>ご来店・予約はこちら</span>
+    <i class="arrow" aria-hidden="true"></i>
+  </a>
+
+  <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く">
+    <span></span><span></span>
+  </button>
 </header>
+
+<!-- ===== モバイル用ドロワー ===================================== -->
+<div class="drawer" id="drawer" data-drawer hidden>
+  <nav class="drawer__nav" aria-label="サイト内メニュー（モバイル）">
+    <a href="#top"><b>01</b>ホーム</a>
+    <a href="#menu"><b>02</b>メニュー</a>
+    <a href="#concept"><b>03</b>こだわり</a>
+    <a href="#shop"><b>04</b>店舗情報</a>
+    <a href="#news"><b>05</b>お知らせ</a>
+  </nav>
+  <a class="pill pill--solid" href="#shop"><span>ご来店・予約はこちら</span><i class="arrow" aria-hidden="true"></i></a>
+</div>
 
 <main id="main">
 
 <!-- ===== 01 HERO ================================================ -->
 <section class="hero" id="top">
-  <div class="hero__media">
-    <img src="assets/img/ph-hero.svg" width="1920" height="1080" alt="火の山のラーメン写真（店舗提供写真に差し替え予定のプレースホルダー）">
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="hero__photo" data-tilt>
+    <img src="assets/img/kv-main.webp" width="1666" height="929" alt="火の山のラーメン。湯気の立つ豚骨スープに、チャーシュー・メンマ・青ねぎ・味玉をのせた一杯。" fetchpriority="high">
   </div>
 
-  <p class="hero__vertical" aria-hidden="true">豚骨と魚介の旨味を重ねた一杯</p>
+  <div class="hero__steam" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
-  <div class="wrap">
-    <h1 class="hero__title">
-      <span class="hero__kicker">鹿児島ラーメン</span>
-      <span class="hero__name">火の山</span>
-    </h1>
-    <p class="hero__lead" data-reveal>
-      豚骨と魚介の旨味を重ねた一杯。<br>
-      姶良市加治木町朝日町の鹿児島ラーメン店です。
+  <div class="hero__inner">
+    <p class="hero__kicker" data-in="1">鹿児島ラーメン</p>
+    <h1 class="hero__name" data-split data-in="2">火の山</h1>
+    <p class="hero__tagline" data-in="3">一杯に、想いを込めて。</p>
+    <p class="hero__copy" data-in="4">
+      豚骨のコクと、やさしい旨み。<br>
+      ここでしか味わえない、<br>
+      こだわりの一杯をぜひご堪能ください。
     </p>
-    <p class="hero__open"><i></i><b>2026.9.15 OPEN</b><span>加治木町朝日町64</span></p>
-
-    <div class="hero__cta">
-      <a class="link-arrow" href="#menu">メニューを見る</a>
-    </div>
+    <p class="hero__cta" data-in="5">
+      <a class="pill" href="#menu"><span>メニューを見る</span><i class="arrow" aria-hidden="true"></i></a>
+    </p>
   </div>
 
-  <p class="hero__caption">※写真は仮素材です。店舗撮影・ご提供いただいた写真に差し替えます。</p>
+  <div class="hero__vertical" data-in="4" aria-hidden="true">
+    <p class="v-text" data-vertical>ここでしか味わえない</p>
+    <p class="v-text v-text--mute" data-vertical>―本気のラーメン―</p>
+  </div>
+
+  <a class="hero__scroll" href="#concept" data-in="5">
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+    <span class="hero__scroll-dot" aria-hidden="true"><i></i></span>
+    <span class="hero__scroll-label">Scroll</span>
+  </a>
 </section>
 
-<!-- ===== 02 CONCEPT ============================================= -->
-<section class="ramen paper" id="concept" aria-labelledby="concept-h">
-  <img class="watermark" src="assets/img/mountain.svg" width="1200" height="420" alt="" aria-hidden="true">
-  <div class="wrap">
-    <div class="ramen__grid">
-      <div>
-        <div class="sec-head" data-reveal>
-          <p class="sec-head__label">Concept</p>
-          <h2 class="sec-head__title" id="concept-h">こだわりの味</h2>
-        </div>
-        <p class="formula" data-reveal data-reveal-delay="1"><span>豚骨</span><span>×</span><span>魚介</span></p>
-        <p class="ramen__body" data-reveal data-reveal-delay="2">
-          火の山の一杯は、豚骨と魚介の旨味を重ねたスープ。<br>
-          店舗公式Instagramで公開されている内容にもとづいて掲載しています。
-        </p>
-        <p class="ramen__note info__sub" data-reveal data-reveal-delay="2">
-          ※スープ・麺・具材の詳細は、店舗確認後にこのセクションへ追記します。<br>
-          実際に提供されている内容と異なる説明は掲載していません。
-        </p>
-        <p class="ramen__link" data-reveal data-reveal-delay="3">
-          <a class="link-arrow" href="#shop">詳しく見る</a>
-        </p>
-      </div>
+<!-- ===== 流れる帯 =============================================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" data-marquee>
+    <span>KAGOSHIMA RAMEN<i></i>火の山<i></i>一杯に、想いを込めて。<i></i>HINOYAMA<i></i>豚骨のコクと、やさしい旨み。<i></i></span>
+    <span>KAGOSHIMA RAMEN<i></i>火の山<i></i>一杯に、想いを込めて。<i></i>HINOYAMA<i></i>豚骨のコクと、やさしい旨み。<i></i></span>
+  </div>
+</div>
 
-      <div class="ramen__media">
-        <img class="brushed" src="assets/img/ph-ramen-bowl.svg" width="1200" height="900" loading="lazy" alt="一杯の全体写真（差し替え予定のプレースホルダー）" data-reveal="img">
-        <img class="brushed brushed--2" src="assets/img/ph-noodle.svg" width="900" height="1100" loading="lazy" alt="麺とスープのアップ写真（差し替え予定のプレースホルダー）" data-reveal="img" data-reveal-delay="1">
+<!-- ===== 02 CONCEPT ============================================= -->
+<section class="concept" id="concept" aria-labelledby="concept-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-label" data-reveal><i aria-hidden="true"></i>Concept</p>
+      <h2 class="sec-title" id="concept-h" data-split data-reveal>こだわり</h2>
+    </div>
+
+    <div class="concept__lead">
+      <div class="concept__vertical" data-reveal>
+          <span class="sr-only">一杯に、想いを込めて。</span>
+          <p class="v-text" data-vertical aria-hidden="true">一杯に、</p>
+          <p class="v-text" data-vertical aria-hidden="true">想いを込めて。</p>
+        </div>
+      <div class="concept__text">
+        <p data-reveal>豚骨のコクと、やさしい旨み。<br>ここでしか味わえない、こだわりの一杯を。</p>
+        <p class="note" data-reveal data-delay="1">※スープ・麺・具材の詳細は店舗確認後に追記します。確認できていない内容は掲載していません。</p>
       </div>
     </div>
+
+    <div class="concept__grid">
+      <figure class="frame" data-reveal>
+        <span class="frame__curtain" aria-hidden="true"></span>
+        <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" alt="豚骨スープの表面。細かな油が浮き、湯気が立っている。" data-parallax="-14">
+        <figcaption><b>スープ</b>豚骨のコクと、やさしい旨み。</figcaption>
+      </figure>
+      <figure class="frame" data-reveal data-delay="1">
+        <span class="frame__curtain" aria-hidden="true"></span>
+        <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" alt="チャーシューとメンマ、青ねぎがのった一杯の具材。" data-parallax="10">
+        <figcaption><b>具材</b>チャーシュー、メンマ、青ねぎ、味玉。</figcaption>
+      </figure>
+      <figure class="frame" data-reveal data-delay="2">
+        <span class="frame__curtain" aria-hidden="true"></span>
+        <img src="assets/img/noren.webp" width="640" height="330" loading="lazy" alt="店内に掲げられた「火の山」の暖簾。" data-parallax="-8">
+        <figcaption><b>店内</b>「火の山」の暖簾が迎えます。</figcaption>
+      </figure>
+    </div>
   </div>
+</section>
+
+<!-- ===== 全幅の帯（パララックス） =============================== -->
+<section class="band" aria-label="ここでしか味わえない、本気のラーメン。">
+  <div class="band__media">
+    <img src="assets/img/kv-wide.webp" width="1066" height="480" loading="lazy" alt="" aria-hidden="true" data-parallax="-40">
+  </div>
+  <p class="band__copy" data-reveal data-split>ここでしか味わえない、本気のラーメン。</p>
 </section>
 
 <!-- ===== 03 MENU ================================================
-     価格が判明したら .tbc を価格テキストへ置き換えるだけで差し替えできる。
-     例： <span class="tbc">価格 要確認</span> → ￥000
-     メニューが追加で確認できた場合は article.menu-card を増やす。
+     価格は公開情報で確認できていないため「要確認」表記。
+     確定したら .tbc を金額に置き換えるだけで差し替えできる。
      ============================================================= -->
-<section class="menu dark" id="menu" aria-labelledby="menu-h">
+<section class="menu" id="menu" aria-labelledby="menu-h">
   <div class="wrap">
-    <div class="sec-head sec-head--row" data-reveal>
+    <div class="sec-head sec-head--row">
       <div>
-        <p class="sec-head__label">Menu</p>
-        <h2 class="sec-head__title" id="menu-h">メニュー</h2>
-        <p class="sec-head__lead">現時点で公開情報から確認できていない価格は、架空の金額を載せず「要確認」と表記しています。</p>
+        <p class="sec-label" data-reveal><i aria-hidden="true"></i>Menu</p>
+        <h2 class="sec-title" id="menu-h" data-split data-reveal>メニュー</h2>
       </div>
-      <a class="link-arrow" href="#menu-list">メニュー一覧を見る</a>
+      <a class="text-link" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener" data-reveal>
+        <span>最新のメニューを見る</span><i class="arrow" aria-hidden="true"></i>
+      </a>
     </div>
 
-    <div class="menu__grid" id="menu-list">
-      <article class="menu-card" data-reveal>
-        <img class="brushed" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメンの写真（差し替え予定のプレースホルダー）">
-        <h3 class="menu-card__name">ラーメン</h3>
-        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+    <div class="menu__grid">
+      <article class="dish" data-reveal>
+        <div class="dish__media">
+          <span class="frame__curtain" aria-hidden="true"></span>
+          <img src="assets/img/dish-main.webp" width="850" height="649" loading="lazy" alt="ラーメン">
+        </div>
+        <h3 class="dish__name">ラーメン</h3>
+        <p class="dish__desc">豚骨のコクと、やさしい旨み。</p>
+        <p class="dish__price"><span class="tbc">価格 要確認</span></p>
       </article>
-      <article class="menu-card" data-reveal data-reveal-delay="1">
-        <img class="brushed brushed--2" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメン（大）の写真（差し替え予定のプレースホルダー）">
-        <h3 class="menu-card__name">ラーメン（大）</h3>
-        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+
+      <article class="dish" data-reveal data-delay="1">
+        <div class="dish__media">
+          <span class="frame__curtain" aria-hidden="true"></span>
+          <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" alt="ラーメン（大）">
+        </div>
+        <h3 class="dish__name">ラーメン（大）</h3>
+        <p class="dish__desc">しっかり食べたい方へ。</p>
+        <p class="dish__price"><span class="tbc">価格 要確認</span></p>
       </article>
-      <article class="menu-card" data-reveal data-reveal-delay="2">
-        <img class="brushed" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="ラーメン（特大）の写真（差し替え予定のプレースホルダー）">
-        <h3 class="menu-card__name">ラーメン（特大）</h3>
-        <p class="menu-card__price"><span class="tbc">価格 要確認</span></p>
+
+      <article class="dish" data-reveal data-delay="2">
+        <div class="dish__media">
+          <span class="frame__curtain" aria-hidden="true"></span>
+          <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" alt="ラーメン（特大）">
+        </div>
+        <h3 class="dish__name">ラーメン（特大）</h3>
+        <p class="dish__desc">いちばん大きいサイズ。</p>
+        <p class="dish__price"><span class="tbc">価格 要確認</span></p>
       </article>
-      <article class="menu-card" data-reveal data-reveal-delay="3">
-        <img class="brushed brushed--2" src="assets/img/ph-dish.svg" width="1200" height="900" loading="lazy" alt="その他メニューの写真（差し替え予定のプレースホルダー）">
-        <h3 class="menu-card__name">その他メニュー</h3>
-        <p class="menu-card__price"><span class="tbc">商品・価格 要確認</span></p>
+
+      <article class="dish" data-reveal data-delay="3">
+        <div class="dish__media">
+          <span class="frame__curtain" aria-hidden="true"></span>
+          <img src="assets/img/d-egg.webp" width="400" height="350" loading="lazy" alt="トッピング">
+        </div>
+        <h3 class="dish__name">トッピング</h3>
+        <p class="dish__desc">味玉・チャーシューなど。</p>
+        <p class="dish__price"><span class="tbc">内容・価格 要確認</span></p>
       </article>
     </div>
 
     <p class="menu__note" data-reveal>
-      ※掲載しているのは、公開情報から確認できたメニューのみです。構成・価格は店舗確認後に正式情報へ差し替えます。<br>
+      ※掲載しているのは公開情報から確認できたメニューです。構成・価格は店舗確認後に正式情報へ差し替えます。<br>
       ※限定メニュー・当日の提供状況は <a href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">公式Instagram</a> をご確認ください。
     </p>
   </div>
 </section>
 
 <!-- ===== 04 SHOP INFORMATION ==================================== -->
-<section class="info paper" id="shop" aria-labelledby="shop-h">
-  <img class="watermark" src="assets/img/mountain.svg" width="1200" height="420" alt="" aria-hidden="true">
+<section class="shop" id="shop" aria-labelledby="shop-h">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="sec-head__label">Shop Information</p>
-      <h2 class="sec-head__title" id="shop-h">店舗情報</h2>
+    <div class="sec-head">
+      <p class="sec-label" data-reveal><i aria-hidden="true"></i>Shop Information</p>
+      <h2 class="sec-title" id="shop-h" data-split data-reveal>店舗情報</h2>
     </div>
 
-    <div class="info__split">
-      <dl class="info__table" data-reveal>
-        <div class="info__row">
-          <dt class="info__dt">店名<small>Shop</small></dt>
-          <dd class="info__dd">鹿児島ラーメン 火の山</dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">住所<small>Address</small></dt>
-          <dd class="info__dd"><p>〒899-5213<br>鹿児島県姶良市加治木町朝日町64</p></dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">電話番号<small>Tel</small></dt>
-          <dd class="info__dd"><p><span class="tbc">電話番号 要確認</span></p></dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">営業時間<small>Open</small></dt>
-          <dd class="info__dd">
-            <p><span class="tbc">営業時間 要確認</span></p>
-            <p class="info__sub">公開情報に差異があるため、確定情報のみ掲載する方針です。店舗確認後に記載します。</p>
-          </dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">定休日<small>Closed</small></dt>
-          <dd class="info__dd"><p><span class="tbc">定休日 要確認</span></p></dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">駐車場<small>Parking</small></dt>
-          <dd class="info__dd">
-            <p>あり</p>
-            <p class="info__sub">※駐車台数・区画は確認中です。</p>
-          </dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">開店日<small>Opened</small></dt>
-          <dd class="info__dd"><p>2026年9月15日</p></dd>
-        </div>
-        <div class="info__row">
-          <dt class="info__dt">公式SNS<small>Instagram</small></dt>
-          <dd class="info__dd">
-            <a class="info__ig" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">@kagoshima.ramen.hinoyama<span class="sr-only">（新しいタブで開きます）</span></a>
-          </dd>
-        </div>
+    <div class="shop__split">
+      <dl class="shop__table" data-reveal>
+        <div><dt>店名</dt><dd>鹿児島ラーメン 火の山</dd></div>
+        <div><dt>住所</dt><dd>〒899-5213<br>鹿児島県姶良市加治木町朝日町64</dd></div>
+        <div><dt>電話番号</dt><dd><span class="tbc">要確認</span></dd></div>
+        <div><dt>営業時間</dt><dd><span class="tbc">要確認</span></dd></div>
+        <div><dt>定休日</dt><dd><span class="tbc">要確認</span></dd></div>
+        <div><dt>駐車場</dt><dd>あり<span class="sub">※台数・区画は確認中です。</span></dd></div>
+        <div><dt>ご予約</dt><dd><span class="tbc">可否 要確認</span><span class="sub">※予約の受付方法が決まり次第、このページに追記します。</span></dd></div>
+        <div><dt>開店日</dt><dd>2026年9月15日</dd></div>
       </dl>
 
-      <div class="info__map" data-reveal data-reveal-delay="1">
+      <div class="shop__side" data-reveal data-delay="1">
         <div class="map">
           <iframe
             title="鹿児島ラーメン 火の山 周辺地図（Googleマップ）"
             src="https://www.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64&amp;hl=ja&amp;z=17&amp;output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p class="info__sub">※地図が表示されない場合は、下のアクセスにある「Googleマップで経路を見る」からご確認ください。</p>
+        <a class="pill pill--solid pill--wide" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64" target="_blank" rel="noopener">
+          <span>Googleマップで経路を見る</span><i class="arrow" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 05 ACCESS ============================================== -->
-<section class="access dark" id="access" aria-labelledby="access-h">
+<!-- ===== 05 NEWS ================================================ -->
+<section class="news" id="news" aria-labelledby="news-h">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <p class="sec-head__label">Access</p>
-      <h2 class="sec-head__title" id="access-h">火の山へ行く</h2>
-      <p class="sec-head__lead">住所・駐車場・経路をまとめています。車でのご来店を想定した案内です。</p>
-    </div>
-
-    <div class="access__grid">
-      <div class="access__lead">
-        <address data-reveal>
-          <span class="access__zip">〒899-5213</span>
-          <span class="access__addr">鹿児島県姶良市加治木町朝日町64</span>
-        </address>
-
-        <dl class="access__point" data-reveal data-reveal-delay="1">
-          <div>
-            <dt>駐車場</dt>
-            <dd>あり ／ 台数・区画は <span class="tbc">要確認</span></dd>
-          </div>
-          <div>
-            <dt>来店手段</dt>
-            <dd>車でのご来店を想定しています。公共交通機関でのアクセスは <span class="tbc">要確認</span></dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="access__figs">
-        <figure>
-          <img class="brushed" src="assets/img/ph-exterior.svg" width="1400" height="900" loading="lazy" alt="店舗外観の写真（差し替え予定のプレースホルダー）" data-reveal="img">
-          <figcaption>店舗外観：到着時に「ここだ」と分かる写真に差し替えます。</figcaption>
-        </figure>
-        <figure>
-          <img class="brushed brushed--2" src="assets/img/ph-parking.svg" width="1200" height="800" loading="lazy" alt="駐車場の写真（差し替え予定のプレースホルダー）" data-reveal="img" data-reveal-delay="1">
-          <figcaption>駐車場：どこに停めるか分かる写真に差し替えます。</figcaption>
-        </figure>
-        <figure>
-          <img class="brushed" src="assets/img/ph-interior.svg" width="1200" height="800" loading="lazy" alt="店内の写真（差し替え予定のプレースホルダー）" data-reveal="img" data-reveal-delay="2">
-          <figcaption>店内：はじめてでも入りやすい雰囲気を伝えます。</figcaption>
-        </figure>
-      </div>
-
-      <div class="access__go">
-        <div class="access__cta" data-reveal data-reveal-delay="2">
-          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
-            Googleマップで経路を見る
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 06 NEWS ================================================
-     お知らせ本文は捏造しない。確定情報（2026.9.15 オープン）のみ掲載し、
-     以降は店舗が更新する前提でレイアウト見本を置いている。
-     ============================================================= -->
-<section class="news paper paper--alt" id="news" aria-labelledby="news-h">
-  <div class="wrap">
-    <div class="sec-head sec-head--row" data-reveal>
+    <div class="sec-head sec-head--row">
       <div>
-        <p class="sec-head__label">News</p>
-        <h2 class="sec-head__title" id="news-h">お知らせ</h2>
-        <p class="sec-head__lead">営業時間の変更や臨時休業など、店舗からのお知らせを掲載する欄です。</p>
+        <p class="sec-label" data-reveal><i aria-hidden="true"></i>News</p>
+        <h2 class="sec-title" id="news-h" data-split data-reveal>お知らせ</h2>
       </div>
-      <a class="link-arrow" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">Instagramの最新投稿へ<span class="sr-only">（新しいタブで開きます）</span></a>
+      <a class="text-link" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener" data-reveal>
+        <span>Instagramの最新投稿へ</span><i class="arrow" aria-hidden="true"></i>
+      </a>
     </div>
 
-    <ol class="news__list" data-reveal>
-      <li class="news__item">
+    <ol class="news__list">
+      <li class="news__row" data-reveal>
         <time datetime="2026-09-15">2026.09.15</time>
         <span class="news__title">鹿児島ラーメン 火の山 オープン</span>
       </li>
-      <li class="news__item news__item--sample">
+      <li class="news__row is-sample" data-reveal data-delay="1">
         <time>0000.00.00</time>
         <span class="news__title">営業時間のお知らせ</span>
         <span class="tbc">掲載例</span>
       </li>
-      <li class="news__item news__item--sample">
+      <li class="news__row is-sample" data-reveal data-delay="2">
         <time>0000.00.00</time>
         <span class="news__title">臨時休業のお知らせ</span>
         <span class="tbc">掲載例</span>
       </li>
-      <li class="news__item news__item--sample">
-        <time>0000.00.00</time>
-        <span class="news__title">メニューのご紹介</span>
-        <span class="tbc">掲載例</span>
-      </li>
     </ol>
-
-    <p class="info__sub news__note" data-reveal>
-      ※「掲載例」はレイアウト確認用の表示です。実際のお知らせは掲載していません。<br>
-      ※運用方法（店舗側で更新するか、RIKKUN WEB STUDIOが代行するか）はご相談のうえ決定します。
-    </p>
+    <p class="news__note" data-reveal>※「掲載例」はレイアウト確認用の表示です。実際のお知らせは掲載していません。</p>
   </div>
 </section>
 
-<!-- ===== 07 INSTAGRAM =========================================== -->
-<section class="ig paper" id="instagram" aria-labelledby="ig-h">
+<!-- ===== 06 最後の一押し ======================================== -->
+<section class="closing" aria-labelledby="closing-h">
+  <div class="closing__media" aria-hidden="true">
+    <img src="assets/img/counter.webp" width="1066" height="189" loading="lazy" alt="" data-parallax="-24">
+  </div>
   <div class="wrap">
-    <div class="ig__split">
-      <div>
-        <div class="sec-head" data-reveal>
-          <p class="sec-head__label">Instagram</p>
-          <h2 class="sec-head__title" id="ig-h">最新情報をチェック</h2>
-        </div>
-        <p class="ig__body" data-reveal data-reveal-delay="1">営業変更・新メニューなど、日々の情報はInstagramへ。このサイトは基本情報をまとめる役割を担います。</p>
-
-        <div class="ig__roles" data-reveal data-reveal-delay="2">
-          <div class="ig__role"><b>Instagram</b><span>営業のお知らせ／新メニュー／日々の写真</span></div>
-          <div class="ig__role"><b>Web</b><span>メニュー／営業時間／アクセス／駐車場</span></div>
-        </div>
-
-        <div class="ig__cta" data-reveal data-reveal-delay="2">
-          <a class="btn btn--outline" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
-            Instagramを見る<span class="sr-only">（新しいタブで開きます）</span>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="ig__grid" data-reveal>
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="Instagram投稿の写真枠（差し替え予定のプレースホルダー）">
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="">
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="">
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="">
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="">
-          <img src="assets/img/ph-square.svg" width="800" height="800" loading="lazy" alt="">
-        </div>
-        <p class="info__sub" style="margin-top:12px">※デモでは投稿枠のみ表示しています。実制作時は最新投稿の掲載方法を店舗とご相談のうえ決定します。</p>
-      </div>
-    </div>
+    <p class="closing__label" data-reveal>Kagoshima Ramen</p>
+    <h2 class="closing__copy" id="closing-h" data-split data-reveal>今日は、火の山へ。</h2>
+    <p class="closing__cta" data-reveal data-delay="1">
+      <a class="pill pill--solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64" target="_blank" rel="noopener">
+        <span>Googleマップで経路を見る</span><i class="arrow" aria-hidden="true"></i>
+      </a>
+      <a class="pill" href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">
+        <span>Instagramを見る</span><i class="arrow" aria-hidden="true"></i>
+      </a>
+    </p>
   </div>
 </section>
 
@@ -420,39 +364,31 @@
     <div class="foot__top">
       <div>
         <span class="brand">
-          <span class="brand__mark">
+          <span class="brand__box">
             <span class="brand__name">火の山</span>
-            <span class="brand__sub">鹿児島ラーメン</span>
+            <span class="brand__seal" aria-hidden="true">山</span>
           </span>
-          <span class="brand__seal" aria-hidden="true">山</span>
+          <span class="brand__sub">鹿児島ラーメン</span>
         </span>
-        <p class="foot__addr">〒899-5213<br>鹿児島県姶良市加治木町朝日町64</p>
+        <p class="foot__addr">〒899-5213　鹿児島県姶良市加治木町朝日町64</p>
       </div>
-      <div>
-        <h3>Menu</h3>
-        <ul>
-          <li><a href="#menu">メニュー</a></li>
-          <li><a href="#concept">こだわり</a></li>
-          <li><a href="#shop">店舗情報</a></li>
-          <li><a href="#access">アクセス</a></li>
-          <li><a href="#news">お知らせ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Follow</h3>
-        <ul>
-          <li><a href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">@kagoshima.ramen.hinoyama</a></li>
-        </ul>
-      </div>
+      <nav class="foot__nav" aria-label="フッターメニュー">
+        <a href="#top">ホーム</a>
+        <a href="#menu">メニュー</a>
+        <a href="#concept">こだわり</a>
+        <a href="#shop">店舗情報</a>
+        <a href="#news">お知らせ</a>
+        <a href="https://www.instagram.com/kagoshima.ramen.hinoyama/" target="_blank" rel="noopener">Instagram</a>
+      </nav>
     </div>
-
     <div class="foot__demo">
       <p><span class="foot__badge">PROPOSAL DEMO</span></p>
-      <p>本サイトは <strong>RIKKUN WEB STUDIO</strong> が鹿児島ラーメン 火の山 様へのご提案用に制作したデモサイトです。店舗の公式サイトではありません。</p>
-      <p>掲載情報のうち「要確認」と表記した項目は、店舗確認後に正式情報へ差し替えます。写真はすべて仮素材です。</p>
+      <p>本サイトは RIKKUN WEB STUDIO が鹿児島ラーメン 火の山 様へのご提案用に制作したデモです。店舗の公式サイトではありません。写真はイメージ、「要確認」の項目は店舗確認後に正式情報へ差し替えます。</p>
     </div>
   </div>
 </footer>
+
+<button class="to-top" type="button" data-totop aria-label="ページ上部へ戻る"><i class="arrow arrow--up" aria-hidden="true"></i></button>
 
 <script src="assets/js/main.js" defer></script>
 </body>
