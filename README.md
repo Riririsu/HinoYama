@@ -48,6 +48,10 @@ JSが無効でも全コンテンツが表示されます。
 | **B** | `plan-b.html` | EDITORIAL LIGHT ― 昼の雑誌ページ | 白と余白、大きな明朝と朱の一点。メニューは横スクロール。清潔感と読みやすさ |
 | **C** | `plan-c.html` | SPLIT / 縦書き ― 暖簾の奥へ | 左に店名と縦書きナビを固定、右が流れる。藍墨×和紙×朱、品書きは壱弐参肆 |
 
+3案は画面下の**切り替えバー**で行き来できます（`1` / `2` / `3` キーでも切り替え可能、`×` で隠せます）。
+これは提案用の閲覧補助なので、実案件化するときは各HTMLの `.pswitch` のマークアップと
+`assets/css/switcher.css` / `assets/js/switcher.js` の読み込みを削除してください。
+
 各案のスタイルとスクリプト：
 `assets/css/style.css` + `assets/js/main.js`（案A）、
 `assets/css/plan-b.css` + `assets/js/plan-b.js`（案B）、
@@ -59,6 +63,8 @@ JSが無効でも全コンテンツが表示されます。
 ```
 index.html                  案A（Hero → こだわり → 帯 → メニュー → 店舗情報 → お知らせ → 最後の一押し）
 plan-b.html / plan-c.html   案B・案C
+assets/css/switcher.css     3案の切り替えバー（提案用・実案件化時に削除）
+assets/js/switcher.js       同上
 assets/css/style.css        スタイルとアニメーション
 assets/js/main.js           ローディング／出現／パララックス／ドロワー／カーソル
 assets/img/*.webp           キービジュアルから切り出した写真（合計約 370KB）

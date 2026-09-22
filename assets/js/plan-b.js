@@ -36,6 +36,7 @@
   var parallax = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
   var hs = document.querySelector('[data-hscroll]');
   var track = document.querySelector('[data-htrack]');
+  var hbar = document.querySelector('[data-hbar]');
   var ticking = false;
 
   function layoutHscroll() {
@@ -70,6 +71,7 @@
         var rect = hs.getBoundingClientRect();
         var progress = Math.min(1, Math.max(0, -rect.top / (hs.offsetHeight - window.innerHeight)));
         track.style.transform = 'translate3d(' + (-progress * hsDistance).toFixed(1) + 'px,0,0)';
+        if (hbar) { hbar.style.width = (12 + progress * 88) + '%'; }
       }
     }
     ticking = false;
@@ -95,6 +97,18 @@
     burger.addEventListener('click', function () { setDrawer(burger.getAttribute('aria-expanded') !== 'true'); });
     drawer.addEventListener('click', function (e) { if (e.target.closest('a')) { setDrawer(false); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setDrawer(false); } });
+  }
+
+  /* キーボードでカードへ移動したとき、そのカードが見える位置までページを進める */
+  if (track) {
+    track.addEventListener('focusin', function (e) {
+      var card = e.target.closest('.card');
+      if (!card || !hs || hsDistance <= 0 || reduce) { return; }
+      var index = Array.prototype.indexOf.call(track.children, card);
+      var ratio = index / Math.max(1, track.children.length - 1);
+      var top = hs.offsetTop + ratio * (hs.offsetHeight - window.innerHeight);
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
   }
 
   /* 写真の上でだけ出るカーソル */

@@ -49,6 +49,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .note a { color: var(--gold); text-decoration: underline; text-underline-offset: 4px; }
 .sec--paper .note { color: var(--ink-60); }
 
+/* モバイルの固定バーの下に見出しが潜らないようにする */
+section[id] { scroll-margin-top: 24px; }
+@media (max-width: 900px) { section[id] { scroll-margin-top: 78px; } }
+
 /* 縦書き：1文字ずつ積む（フォント環境によらず字送りを安定させる） */
 .v-text { writing-mode: vertical-rl; }
 .v-text.is-split { writing-mode: horizontal-tb; display: flex; flex-direction: column; align-items: center; }
@@ -118,7 +122,12 @@ html:not(.js) .noren { display: none; }
 }
 .side__sub { font-size: 10px; letter-spacing: .32em; color: rgba(233, 226, 212, .6); }
 
-.side__nav { display: flex; gap: 22px; justify-content: flex-start; }
+.side__en {
+  writing-mode: vertical-rl; font-size: 9.5px; letter-spacing: .34em;
+  color: rgba(233, 226, 212, .56); margin: 0 0 -8px 2px;
+  max-height: 210px;
+}
+.side__nav { display: flex; gap: 22px; justify-content: flex-start; margin-top: auto; margin-bottom: auto; }
 .side__nav a {
   display: flex; flex-direction: column; align-items: center; gap: 12px;
   font-family: var(--font-min); font-size: 14.5px; letter-spacing: .1em;
@@ -226,6 +235,11 @@ html:not(.js) .noren { display: none; }
 .sec--paper { background: var(--washi); color: var(--ink); }
 .sec__head { display: flex; flex-direction: row-reverse; align-items: flex-start; gap: 18px; order: 2; }
 .sec__title { font-family: var(--font-min); font-weight: 800; font-size: clamp(26px, 3.6vw, 40px); letter-spacing: .1em; }
+.sec__no {
+  writing-mode: vertical-rl; font-family: var(--font-min); font-size: 12px; letter-spacing: .28em;
+  color: var(--gold); padding-top: 4px;
+}
+.sec--paper .sec__no { color: #6f561f; }        /* 和紙地ではやや濃い金で読みやすく */
 .sec__en {
   writing-mode: vertical-rl; font-size: 10.5px; letter-spacing: .34em; text-transform: uppercase;
   color: var(--vermil-lt); padding-top: 4px;
@@ -236,7 +250,7 @@ html:not(.js) .noren { display: none; }
   .sec__head { order: 1; flex-direction: row; align-items: center; gap: 14px; }
   .sec__title { writing-mode: horizontal-tb !important; flex-direction: row !important; }
   .sec__title .vch { line-height: 1.4; }
-  .sec__en { writing-mode: horizontal-tb; }
+  .sec__no, .sec__en { writing-mode: horizontal-tb; padding-top: 0; }
   .sec__body { order: 2; }
 }
 .lead { font-family: var(--font-min); font-size: clamp(17px, 2.2vw, 24px); line-height: 2.1; letter-spacing: .1em; max-width: 26em; }
@@ -262,9 +276,16 @@ html:not(.js) .noren { display: none; }
 
 /* 品書き */
 .oshinagaki li {
-  display: grid; gap: 4px 20px; padding: 20px 0; border-bottom: 1px solid rgba(233, 226, 212, .14);
-  align-items: baseline;
+  position: relative; display: grid; gap: 4px 20px; padding: 20px 0 20px 0;
+  border-bottom: 1px solid rgba(233, 226, 212, .14); align-items: baseline;
+  transition: padding-left .45s var(--e);
 }
+.oshinagaki li::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--vermil);
+  transform: scaleY(0); transform-origin: top; transition: transform .45s var(--e);
+}
+.oshinagaki li:hover { padding-left: 16px; }
+.oshinagaki li:hover::before { transform: scaleY(1); }
 .oshinagaki li:first-child { border-top: 1px solid rgba(233, 226, 212, .14); }
 @media (min-width: 720px) { .oshinagaki li { grid-template-columns: 40px 1fr auto; } }
 .oshinagaki__no { font-family: var(--font-min); font-size: 17px; color: var(--gold); letter-spacing: .1em; }
@@ -303,6 +324,11 @@ html:not(.js) .noren { display: none; }
 .closing::after { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 60% at 50% 50%, rgba(16, 24, 32, .5), var(--navy) 82%); }
 .closing > * { position: relative; z-index: 2; }
 .closing__copy { font-family: var(--font-min); font-weight: 800; font-size: clamp(26px, 4.4vw, 46px); letter-spacing: .16em; }
+.closing__seal {
+  display: grid; place-items: center; width: 44px; height: 44px; background: var(--vermil);
+  color: #fff; font-family: var(--font-min); font-size: 22px; line-height: 1;
+  box-shadow: 0 8px 24px rgba(214, 65, 44, .3);
+}
 
 /* フッター */
 .foot { padding: 60px var(--pad) 46px; border-top: 1px solid rgba(233, 226, 212, .12); display: grid; gap: 10px; }

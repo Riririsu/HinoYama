@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/img/kv-main.webp" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700;800&family=Yuji+Syuku&display=swap">
+<link rel="stylesheet" href="assets/css/switcher.css">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script type="application/ld+json">
@@ -179,17 +180,17 @@
     <div class="concept__grid">
       <figure class="frame" data-reveal>
         <span class="frame__curtain" aria-hidden="true"></span>
-        <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" alt="豚骨スープの表面。細かな油が浮き、湯気が立っている。" data-parallax="-14">
+        <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" decoding="async" alt="豚骨スープの表面。細かな油が浮き、湯気が立っている。" data-parallax="-14">
         <figcaption><b>スープ</b>豚骨のコクと、やさしい旨み。</figcaption>
       </figure>
       <figure class="frame" data-reveal data-delay="1">
         <span class="frame__curtain" aria-hidden="true"></span>
-        <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" alt="チャーシューとメンマ、青ねぎがのった一杯の具材。" data-parallax="10">
+        <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" decoding="async" alt="チャーシューとメンマ、青ねぎがのった一杯の具材。" data-parallax="10">
         <figcaption><b>具材</b>チャーシュー、メンマ、青ねぎ、味玉。</figcaption>
       </figure>
       <figure class="frame" data-reveal data-delay="2">
         <span class="frame__curtain" aria-hidden="true"></span>
-        <img src="assets/img/noren.webp" width="640" height="330" loading="lazy" alt="店内に掲げられた「火の山」の暖簾。" data-parallax="-8">
+        <img src="assets/img/noren.webp" width="640" height="330" loading="lazy" decoding="async" alt="店内に掲げられた「火の山」の暖簾。" data-parallax="-8">
         <figcaption><b>店内</b>「火の山」の暖簾が迎えます。</figcaption>
       </figure>
     </div>
@@ -199,7 +200,7 @@
 <!-- ===== 全幅の帯（パララックス） =============================== -->
 <section class="band" aria-label="ここでしか味わえない、本気のラーメン。">
   <div class="band__media">
-    <img src="assets/img/kv-wide.webp" width="1066" height="480" loading="lazy" alt="" aria-hidden="true" data-parallax="-40">
+    <img src="assets/img/kv-wide.webp" width="1066" height="480" loading="lazy" decoding="async" alt="" aria-hidden="true" data-parallax="-40">
   </div>
   <p class="band__copy" data-reveal data-split>ここでしか味わえない、本気のラーメン。</p>
 </section>
@@ -224,8 +225,9 @@
       <article class="dish" data-reveal>
         <div class="dish__media">
           <span class="frame__curtain" aria-hidden="true"></span>
-          <img src="assets/img/dish-main.webp" width="850" height="649" loading="lazy" alt="ラーメン">
+          <img src="assets/img/dish-main.webp" width="850" height="649" loading="lazy" decoding="async" alt="ラーメン">
         </div>
+        <p class="dish__no" aria-hidden="true">01</p>
         <h3 class="dish__name">ラーメン</h3>
         <p class="dish__desc">豚骨のコクと、やさしい旨み。</p>
         <p class="dish__price"><span class="tbc">価格 要確認</span></p>
@@ -234,8 +236,9 @@
       <article class="dish" data-reveal data-delay="1">
         <div class="dish__media">
           <span class="frame__curtain" aria-hidden="true"></span>
-          <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" alt="ラーメン（大）">
+          <img src="assets/img/d-chashu.webp" width="520" height="380" loading="lazy" decoding="async" alt="ラーメン（大）">
         </div>
+        <p class="dish__no" aria-hidden="true">02</p>
         <h3 class="dish__name">ラーメン（大）</h3>
         <p class="dish__desc">しっかり食べたい方へ。</p>
         <p class="dish__price"><span class="tbc">価格 要確認</span></p>
@@ -244,8 +247,9 @@
       <article class="dish" data-reveal data-delay="2">
         <div class="dish__media">
           <span class="frame__curtain" aria-hidden="true"></span>
-          <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" alt="ラーメン（特大）">
+          <img src="assets/img/d-broth.webp" width="570" height="370" loading="lazy" decoding="async" alt="ラーメン（特大）">
         </div>
+        <p class="dish__no" aria-hidden="true">03</p>
         <h3 class="dish__name">ラーメン（特大）</h3>
         <p class="dish__desc">いちばん大きいサイズ。</p>
         <p class="dish__price"><span class="tbc">価格 要確認</span></p>
@@ -254,8 +258,9 @@
       <article class="dish" data-reveal data-delay="3">
         <div class="dish__media">
           <span class="frame__curtain" aria-hidden="true"></span>
-          <img src="assets/img/d-egg.webp" width="400" height="350" loading="lazy" alt="トッピング">
+          <img src="assets/img/d-egg.webp" width="400" height="350" loading="lazy" decoding="async" alt="トッピング">
         </div>
+        <p class="dish__no" aria-hidden="true">04</p>
         <h3 class="dish__name">トッピング</h3>
         <p class="dish__desc">味玉・チャーシューなど。</p>
         <p class="dish__price"><span class="tbc">内容・価格 要確認</span></p>
@@ -294,7 +299,7 @@
           <iframe
             title="鹿児島ラーメン 火の山 周辺地図（Googleマップ）"
             src="https://www.google.com/maps?q=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64&amp;hl=ja&amp;z=17&amp;output=embed"
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            loading="lazy" decoding="async" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <a class="pill pill--solid pill--wide" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E9%B9%BF%E5%85%90%E5%B3%B6%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%20%E7%81%AB%E3%81%AE%E5%B1%B1%20%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E5%A7%B6%E8%89%AF%E5%B8%82%E5%8A%A0%E6%B2%BB%E6%9C%A8%E7%94%BA%E6%9C%9D%E6%97%A5%E7%94%BA64" target="_blank" rel="noopener">
           <span>Googleマップで経路を見る</span><i class="arrow" aria-hidden="true"></i>
@@ -340,7 +345,7 @@
 <!-- ===== 06 最後の一押し ======================================== -->
 <section class="closing" aria-labelledby="closing-h">
   <div class="closing__media" aria-hidden="true">
-    <img src="assets/img/counter.webp" width="1066" height="189" loading="lazy" alt="" data-parallax="-24">
+    <img src="assets/img/counter.webp" width="1066" height="189" loading="lazy" decoding="async" alt="" data-parallax="-24">
   </div>
   <div class="wrap">
     <p class="closing__label" data-reveal>Kagoshima Ramen</p>
@@ -390,6 +395,17 @@
 
 <button class="to-top" type="button" data-totop aria-label="ページ上部へ戻る"><i class="arrow arrow--up" aria-hidden="true"></i></button>
 
+
+<!-- ===== デザイン案の切り替え（提案用デモの閲覧補助・実案件化時に削除） ===== -->
+<nav class="pswitch" data-pswitch aria-label="デザイン案の切り替え">
+  <span class="pswitch__label">DESIGN</span>
+  <a href="index.html"><b>案A</b><small>夜の店内</small></a>
+  <a href="plan-b.html"><b>案B</b><small>白と余白</small></a>
+  <a href="plan-c.html"><b>案C</b><small>縦書き</small></a>
+  <button class="pswitch__close" type="button" data-pswitch-close aria-label="切り替えバーを隠す">×</button>
+</nav>
+
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/switcher.js" defer></script>
 </body>
 </html>
